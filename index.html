@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>酷炫日历</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            margin: 0;
+        }
+        .calendar {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+        .month {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+        .day {
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .day:hover {
+            background: #74ebd5;
+            color: white;
+        }
+        .today {
+            background: #acb6e5;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="calendar">
+        <div class="month" id="month"></div>
+        <div class="days" id="days"></div>
+    </div>
+
+    <script>
+        const monthEl = document.getElementById('month');
+        const daysEl = document.getElementById('days');
+        const date = new Date();
+        const today = date.getDate();
+        const months = [
+            '一月', '二月', '三月', '四月', '五月', '六月',
+            '七月', '八月', '九月', '十月', '十一月', '十二月'
+        ];
+
+        function renderCalendar() {
+            const month = date.getMonth();
+            const year = date.getFullYear();
+            monthEl.textContent = `${months[month]} ${year}`;
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            daysEl.innerHTML = '';
+
+            // 添加空白天数
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDay = document.createElement('div');
+                daysEl.appendChild(emptyDay);
+            }
+
+            // 添加日期
+            for (let i = 1; i <= daysInMonth; i++) {
+                const day = document.createElement('div');
+                day.classList.add('day');
+                day.textContent = i;
+                if (i === today && month === new Date().getMonth() && year === new Date().getFullYear()) {
+                    day.classList.add('today');
+                }
+                daysEl.appendChild(day);
+            }
+        }
+
+        renderCalendar();
+    </script>
+</body>
+</html>
