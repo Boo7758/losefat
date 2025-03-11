@@ -48,7 +48,7 @@
             background: #acb6e5;
             color: white;
         }
-        .clickable:hover {
+        .special:hover {
             background: #ff6f61;
             color: white;
         }
@@ -92,12 +92,24 @@
                 day.classList.add('day');
                 day.textContent = i;
 
-                // 为3月11日添加特定链接
+                // 格式化日期为两位数
+                const dayStr = i < 10 ? `0${i}` : `${i}`;
+                let url;
+
+                // 为特定日期设置链接
                 if (i === 11 && month === 2 && year === 2025) {
-                    day.href = 'https://boo7758.github.io/losefat/20250311.html';
-                    day.classList.add('clickable'); // 添加特殊样式以区分
-                    day.target = '_blank'; // 在新标签页打开链接
+                    url = 'https://boo7758.github.io/losefat/20250311.html';
+                    day.classList.add('special'); // 特殊日期样式
+                } else if (i === 10 && month === 2 && year === 2025) {
+                    url = 'https://boo7758.github.io/losefat/20250310.html';
+                    day.classList.add('special'); // 特殊日期样式
+                } else {
+                    // 其他日期按结构生成链接
+                    url = `https://boo7758.github.io/losefat/202503${dayStr}.html`;
                 }
+
+                day.href = url;
+                day.target = '_blank'; // 在新标签页打开链接
 
                 // 高亮今天的日期（如果适用）
                 if (i === today && month === new Date().getMonth() && year === new Date().getFullYear()) {
