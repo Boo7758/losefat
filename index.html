@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>酷炫日历</title>
+    <title>减肥日历记录</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,6 +37,8 @@
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.3s ease;
+            text-decoration: none;
+            color: #333;
         }
         .day:hover {
             background: #74ebd5;
@@ -44,6 +46,10 @@
         }
         .today {
             background: #acb6e5;
+            color: white;
+        }
+        .clickable:hover {
+            background: #ff6f61;
             color: white;
         }
     </style>
@@ -57,8 +63,8 @@
     <script>
         const monthEl = document.getElementById('month');
         const daysEl = document.getElementById('days');
-        const date = new Date();
-        const today = date.getDate();
+        const date = new Date(2025, 2, 1); // 设置为2025年3月（月份从0开始）
+        const today = new Date().getDate();
         const months = [
             '一月', '二月', '三月', '四月', '五月', '六月',
             '七月', '八月', '九月', '十月', '十一月', '十二月'
@@ -82,12 +88,22 @@
 
             // 添加日期
             for (let i = 1; i <= daysInMonth; i++) {
-                const day = document.createElement('div');
+                const day = document.createElement('a'); // 使用 <a> 标签使其可点击
                 day.classList.add('day');
                 day.textContent = i;
+
+                // 为3月11日添加特定链接
+                if (i === 11 && month === 2 && year === 2025) {
+                    day.href = 'https://boo7758.github.io/losefat/20250311.html';
+                    day.classList.add('clickable'); // 添加特殊样式以区分
+                    day.target = '_blank'; // 在新标签页打开链接
+                }
+
+                // 高亮今天的日期（如果适用）
                 if (i === today && month === new Date().getMonth() && year === new Date().getFullYear()) {
                     day.classList.add('today');
                 }
+
                 daysEl.appendChild(day);
             }
         }
