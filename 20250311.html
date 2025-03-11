@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>20250311 - 饮食记录</title>
+    <title>20250311 - 饮食记录与热量分析</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,9 +13,12 @@
             background-color: #f5f5f5;
             color: #333;
         }
-        h1 {
+        h1, h2 {
             text-align: center;
             color: #2c3e50;
+        }
+        h2 {
+            color: #2980b9;
         }
         table {
             width: 100%;
@@ -40,61 +43,164 @@
             font-weight: bold;
             background-color: #ecf0f1;
         }
+        .suggestion {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>2025年3月11日 - 饮食记录</h1>
+    <h1>2025年3月11日 - 饮食记录与热量分析</h1>
+
+    <h2>今日饮食清单</h2>
     <table>
         <tr>
             <th>食物</th>
             <th>数量</th>
             <th>单位</th>
+            <th>热量 (kcal)</th>
         </tr>
         <tr>
             <td>黄瓜</td>
             <td>600</td>
             <td>克</td>
+            <td>90</td>
         </tr>
         <tr>
             <td>冰草</td>
             <td>200</td>
             <td>克</td>
+            <td>32</td>
         </tr>
         <tr>
             <td>素鸡</td>
             <td>250</td>
             <td>克</td>
+            <td>375</td>
         </tr>
         <tr>
             <td>全麦面包</td>
             <td>150</td>
             <td>克 (50g*3)</td>
+            <td>375</td>
         </tr>
         <tr>
             <td>鸡蛋</td>
             <td>6</td>
             <td>个</td>
+            <td>408</td>
         </tr>
         <tr>
             <td>韭菜猪肉饺子</td>
             <td>25</td>
             <td>个</td>
+            <td>1125</td>
         </tr>
         <tr>
             <td>花生</td>
             <td>15</td>
             <td>颗</td>
+            <td>90</td>
         </tr>
         <tr>
             <td>草莓</td>
             <td>4</td>
             <td>颗</td>
+            <td>28</td>
         </tr>
         <tr>
             <td>耙耙柑</td>
             <td>3</td>
             <td>个</td>
+            <td>150</td>
+        </tr>
+        <tr class="total">
+            <td>总计</td>
+            <td>-</td>
+            <td>-</td>
+            <td>2673</td>
         </tr>
     </table>
+
+    <h2>调整后建议饮食清单 (约 2100 kcal)</h2>
+    <table>
+        <tr>
+            <th>食物</th>
+            <th>数量</th>
+            <th>单位</th>
+            <th>热量 (kcal)</th>
+        </tr>
+        <tr>
+            <td>黄瓜</td>
+            <td>800</td>
+            <td>克</td>
+            <td>120</td>
+        </tr>
+        <tr>
+            <td>冰草</td>
+            <td>300</td>
+            <td>克</td>
+            <td>48</td>
+        </tr>
+        <tr>
+            <td>素鸡</td>
+            <td>250</td>
+            <td>克</td>
+            <td>375</td>
+        </tr>
+        <tr>
+            <td>全麦面包</td>
+            <td>100</td>
+            <td>克 (50g*2)</td>
+            <td>250</td>
+        </tr>
+        <tr>
+            <td>鸡蛋</td>
+            <td>6</td>
+            <td>个</td>
+            <td>408</td>
+        </tr>
+        <tr>
+            <td>韭菜猪肉饺子</td>
+            <td>18</td>
+            <td>个</td>
+            <td>810</td>
+        </tr>
+        <tr>
+            <td>花生</td>
+            <td>10</td>
+            <td>颗</td>
+            <td>60</td>
+        </tr>
+        <tr>
+            <td>草莓</td>
+            <td>6</td>
+            <td>颗</td>
+            <td>42</td>
+        </tr>
+        <tr>
+            <td>耙耙柑</td>
+            <td>3</td>
+            <td>个</td>
+            <td>150</td>
+        </tr>
+        <tr class="total">
+            <td>总计</td>
+            <td>-</td>
+            <td>-</td>
+            <td>2100</td>
+        </tr>
+    </table>
+
+    <div class="suggestion">
+        <h2>建议</h2>
+        <p>1. <strong>控制热量</strong>：原饮食热量 (2673 kcal) 偏高，建议减少饺子至 18 个、全麦面包至 2 片，热量降至约 2100 kcal，更适合减脂。</p>
+        <p>2. <strong>增加低热量食物</strong>：黄瓜增至 800g，冰草增至 300g，草莓增至 6 颗，增强饱腹感。</p>
+        <p>3. <strong>优化搭配</strong>：保留鸡蛋和素鸡的蛋白质，花生减至 10 颗以控制脂肪摄入。</p>
+        <p>4. <strong>分餐食用</strong>：早餐：全麦面包+鸡蛋；午餐：饺子+蔬菜；晚餐：素鸡+水果。</p>
+        <p>5. <strong>运动配合</strong>：建议搭配适量运动（如快走 30 分钟），加速减脂效果。</p>
+    </div>
 </body>
 </html>
