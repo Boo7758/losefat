@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>减肥日历记录</title>
+    <title id="pageTitle">减肥日历记录</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,13 +19,16 @@
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            width: 300px;
+            width: 340px;
             text-align: center;
         }
         .month {
             font-size: 24px;
             margin-bottom: 10px;
             color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .days {
             display: grid;
@@ -52,27 +55,50 @@
             background: #ff6f61;
             color: white;
         }
+        .nav-button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
     </style>
 </head>
 <body>
     <div class="calendar">
-        <div class="month" id="month"></div>
+        <div class="month" id="month">
+            <button class="nav-button" onclick="prevMonth()">◄</button>
+            <span id="monthText"></span>
+            <button class="nav-button" onclick="nextMonth()">►</button>
+        </div>
         <div class="days" id="days"></div>
     </div>
 
     <script>
-        const monthEl = document.getElementById('month');
+        const monthEl = document.getElementById('monthText');
         const daysEl = document.getElementById('days');
-        const date = new Date(2025, 2, 1); // 设置为2025年3月（月份从0开始）
-        const today = new Date().getDate();
+        let currentDate = new Date(2025, 2, 1); // 默认从2025年3月开始
+        const today = new Date();
         const months = [
             '一月', '二月', '三月', '四月', '五月', '六月',
             '七月', '八月', '九月', '十月', '十一月', '十二月'
         ];
 
+        // 更新标题为“减肥日历记录 + 当前时间戳”
+        function updateTitle() {
+            const now = new Date();
+            const timestamp = now.getFullYear() + '-' + 
+                            String(now.getMonth() + 1).padStart(2, '0') + '-' + 
+                            String(now.getDate()).padStart(2, '0') + ' ' + 
+                            String(now.getHours()).padStart(2, '0') + ':' + 
+                            String(now.getMinutes()).padStart(2, '0') + ':' + 
+                            String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('pageTitle').textContent = `减肥日历记录 ${timestamp}`;
+        }
+
         function renderCalendar() {
-            const month = date.getMonth();
-            const year = date.getFullYear();
+            const month = currentDate.getMonth();
+            const year = currentDate.getFullYear();
             monthEl.textContent = `${months[month]} ${year}`;
 
             const firstDay = new Date(year, month, 1).getDay();
@@ -92,27 +118,27 @@
                 day.classList.add('day');
                 day.textContent = i;
 
-                // 格式化日期为两位数
-                const dayStr = i < 10 ? `0${i}` : `${i}`;
-                let url;
+                // 格式化日期为 YYYYMMDD
+                const dayStr = String(i).padStart(2, '0');
+                const monthStr = String(month + 1).padStart(2, '0');
+                const yearStr = String(year);
+                const dateStr = `${yearStr}${monthStr}${dayStr}`;
 
-                // 为特定日期设置链接
+                // 设置链接
+                let url = `https://boo7758.github.io/losefat/${dateStr}.html`;
                 if (i === 11 && month === 2 && year === 2025) {
                     url = 'https://boo7758.github.io/losefat/20250311.html';
-                    day.classList.add('special'); // 特殊日期样式
+                    day.classList.add('special');
                 } else if (i === 10 && month === 2 && year === 2025) {
                     url = 'https://boo7758.github.io/losefat/20250310.html';
-                    day.classList.add('special'); // 特殊日期样式
-                } else {
-                    // 其他日期按结构生成链接
-                    url = `https://boo7758.github.io/losefat/202503${dayStr}.html`;
+                    day.classList.add('special');
                 }
 
                 day.href = url;
                 day.target = '_blank'; // 在新标签页打开链接
 
-                // 高亮今天的日期（如果适用）
-                if (i === today && month === new Date().getMonth() && year === new Date().getFullYear()) {
+                // 高亮今天的日期
+                if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
                     day.classList.add('today');
                 }
 
@@ -120,7 +146,24 @@
             }
         }
 
+        // 切换到上一个月
+        function prevMonth() {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        }
+
+        // 切换到下一个月
+        function nextMonth() {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        }
+
+        // 初始渲染和标题更新
+        updateTitle();
         renderCalendar();
+
+        // 每秒更新标题时间戳
+        setInterval(updateTitle, 1000);
     </script>
 </body>
 </html>
