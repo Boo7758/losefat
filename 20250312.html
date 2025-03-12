@@ -6,124 +6,173 @@
     <title>今日饮食清单 - 含营养信息</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow-x: auto;
         }
         table {
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 1em;
         }
         th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
         }
         th {
-            background-color: #f5f5f5;
+            background: #3498db;
+            color: white;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
         tr:nth-child(even) {
-            background-color: #fafafa;
+            background-color: #f8f9fa;
+        }
+        tr:hover {
+            background-color: #e9ecef;
+            transition: background-color 0.3s;
+        }
+        tr:last-child {
+            font-weight: bold;
+            background: #dfe6e9;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+        }
+        .footer a {
+            color: #2980b9;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border: 2px solid #2980b9;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .footer a:hover {
+            background: #2980b9;
+            color: white;
+            box-shadow: 0 2px 10px rgba(41, 128, 185, 0.3);
         }
     </style>
 </head>
 <body>
     <h1>今日饮食清单 - 2025年3月12日</h1>
-    <table>
-        <tr>
-            <th>食物</th>
-            <th>份量</th>
-            <th>热量 (kcal)</th>
-            <th>蛋白质 (g)</th>
-            <th>脂肪 (g)</th>
-            <th>碳水化合物 (g)</th>
-        </tr>
-        <tr>
-            <td>黄瓜</td>
-            <td>600g</td>
-            <td>90</td>
-            <td>3.9</td>
-            <td>0.6</td>
-            <td>21.6</td>
-        </tr>
-        <tr>
-            <td>番茄</td>
-            <td>400g</td>
-            <td>72</td>
-            <td>3.6</td>
-            <td>0.8</td>
-            <td>15.6</td>
-        </tr>
-        <tr>
-            <td>鸡蛋</td>
-            <td>2个 (约100g)</td>
-            <td>155</td>
-            <td>12.6</td>
-            <td>11.0</td>
-            <td>1.1</td>
-        </tr>
-        <tr>
-            <td>饺子</td>
-            <td>25个 (约500g)</td>
-            <td>1000</td>
-            <td>40.0</td>
-            <td>35.0</td>
-            <td>125.0</td>
-        </tr>
-        <tr>
-            <td>水煮笋丝</td>
-            <td>400g</td>
-            <td>80</td>
-            <td>8.0</td>
-            <td>0.8</td>
-            <td>16.0</td>
-        </tr>
-        <tr>
-            <td>水煮芹菜</td>
-            <td>350g</td>
-            <td>56</td>
-            <td>2.5</td>
-            <td>0.7</td>
-            <td>10.5</td>
-        </tr>
-        <tr>
-            <td>毛豆</td>
-            <td>400g</td>
-            <td>484</td>
-            <td>44.0</td>
-            <td>20.0</td>
-            <td>40.0</td>
-        </tr>
-        <tr>
-            <td>素鸡</td>
-            <td>250g</td>
-            <td>375</td>
-            <td>42.5</td>
-            <td>17.5</td>
-            <td>12.5</td>
-        </tr>
-        <tr>
-            <td>玉米热狗肠</td>
-            <td>35g</td>
-            <td>90</td>
-            <td>3.5</td>
-            <td>7.0</td>
-            <td>2.8</td>
-        </tr>
-        <tr>
-            <th>总数</th>
-            <th>约2435g</th>
-            <th>2402</th>
-            <th>160.6</th>
-            <th>93.4</th>
-            <th>245.1</th>
-        </tr>
-    </table>
+    <div class="container">
+        <table>
+            <tr>
+                <th>食物</th>
+                <th>份量</th>
+                <th>热量 (kcal)</th>
+                <th>蛋白质 (g)</th>
+                <th>脂肪 (g)</th>
+                <th>碳水化合物 (g)</th>
+            </tr>
+            <tr>
+                <td>黄瓜</td>
+                <td>600g</td>
+                <td>90</td>
+                <td>3.9</td>
+                <td>0.6</td>
+                <td>21.6</td>
+            </tr>
+            <tr>
+                <td>番茄</td>
+                <td>400g</td>
+                <td>72</td>
+                <td>3.6</td>
+                <td>0.8</td>
+                <td>15.6</td>
+            </tr>
+            <tr>
+                <td>鸡蛋</td>
+                <td>2个 (约100g)</td>
+                <td>155</td>
+                <td>12.6</td>
+                <td>11.0</td>
+                <td>1.1</td>
+            </tr>
+            <tr>
+                <td>饺子</td>
+                <td>25个 (约500g)</td>
+                <td>1000</td>
+                <td>40.0</td>
+                <td>35.0</td>
+                <td>125.0</td>
+            </tr>
+            <tr>
+                <td>水煮笋丝</td>
+                <td>400g</td>
+                <td>80</td>
+                <td>8.0</td>
+                <td>0.8</td>
+                <td>16.0</td>
+            </tr>
+            <tr>
+                <td>水煮芹菜</td>
+                <td>350g</td>
+                <td>56</td>
+                <td>2.5</td>
+                <td>0.7</td>
+                <td>10.5</td>
+            </tr>
+            <tr>
+                <td>毛豆</td>
+                <td>400g</td>
+                <td>484</td>
+                <td>44.0</td>
+                <td>20.0</td>
+                <td>40.0</td>
+            </tr>
+            <tr>
+                <td>素鸡</td>
+                <td>250g</td>
+                <td>375</td>
+                <td>42.5</td>
+                <td>17.5</td>
+                <td>12.5</td>
+            </tr>
+            <tr>
+                <td>玉米热狗肠</td>
+                <td>35g</td>
+                <td>90</td>
+                <td>3.5</td>
+                <td>7.0</td>
+                <td>2.8</td>
+            </tr>
+            <tr>
+                <th>总数</th>
+                <th>约2435g</th>
+                <th>2402</th>
+                <th>160.6</th>
+                <th>93.4</th>
+                <th>245.1</th>
+            </tr>
+        </table>
+    </div>
+    <div class="footer">
+        <a href="https://boo7758.github.io/losefat/" target="_blank">返回减脂主页</a>
+    </div>
 </body>
 </html>
