@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食材明细与营养汇总</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .summary-table {
+            margin-top: 40px;
+        }
+        a.return-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        a.return-link:hover {
+            background-color: #e65b50;
+            transform: scale(1.05);
+        }
+        a.return-link:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>食材明细与营养汇总</h1>
+
+        <!-- 食材明细 -->
+        <h2>食材明细</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>食材</th>
+                    <th>重量 (g/ml)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>黄瓜</td><td>600g</td></tr>
+                <tr><td>胡萝卜</td><td>800g</td></tr>
+                <tr><td>素鸡</td><td>250g</td></tr>
+                <tr><td>水煮鸡蛋</td><td>200g</td></tr>
+                <tr><td>冰草</td><td>200g</td></tr>
+                <tr><td>牛奶</td><td>250ml</td></tr>
+                <tr><td>耙耙柑</td><td>300g</td></tr>
+                <tr><td colspan="2"><b>饺子 (30个)</b></td></tr>
+                <tr><td>&nbsp;&nbsp;面粉</td><td>360g</td></tr>
+                <tr><td>&nbsp;&nbsp;猪肉</td><td>150g</td></tr>
+                <tr><td>&nbsp;&nbsp;蔬菜</td><td>60g</td></tr>
+                <tr><td>&nbsp;&nbsp;调料</td><td>30g</td></tr>
+            </tbody>
+        </table>
+
+        <!-- 汇总表 -->
+        <h2>营养汇总</h2>
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th>成分</th>
+                    <th>现有食材总计</th>
+                    <th>饺子总计</th>
+                    <th>总计</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>热量 (kcal)</td>
+                    <td>1214</td>
+                    <td>1572.9</td>
+                    <td>2786.9</td>
+                </tr>
+                <tr>
+                    <td>蛋白质 (g)</td>
+                    <td>103.1</td>
+                    <td>77.8</td>
+                    <td>180.9</td>
+                </tr>
+                <tr>
+                    <td>脂肪 (g)</td>
+                    <td>60.2</td>
+                    <td>9.78</td>
+                    <td>69.98</td>
+                </tr>
+                <tr>
+                    <td>碳水化合物 (g)</td>
+                    <td>167.75</td>
+                    <td>284.7</td>
+                    <td>452.45</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 返回链接 -->
+        <a href="https://boo7758.github.io/losefat/" class="return-link">返回首页</a>
+    </div>
+</body>
+</html>
+
+
+
