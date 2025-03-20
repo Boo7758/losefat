@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食材热量与营养分析</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 600px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #ff6f61;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .total {
+            font-weight: bold;
+            background-color: #e6ffe6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>食材热量与营养分析</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>食材</th>
+                    <th>重量</th>
+                    <th>热量 (kcal)</th>
+                    <th>蛋白质 (g)</th>
+                    <th>碳水化合物 (g)</th>
+                    <th>脂肪 (g)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>黄瓜</td>
+                    <td>600g</td>
+                    <td>96</td>
+                    <td>3.6</td>
+                    <td>21.6</td>
+                    <td>0.6</td>
+                </tr>
+                <tr>
+                    <td>胡萝卜</td>
+                    <td>400g</td>
+                    <td>164</td>
+                    <td>3.6</td>
+                    <td>38.4</td>
+                    <td>0.8</td>
+                </tr>
+                <tr>
+                    <td>饺子 (猪肉白菜)</td>
+                    <td>26个 (520g)</td>
+                    <td>1040</td>
+                    <td>41.6</td>
+                    <td>114.4</td>
+                    <td>41.6</td>
+                </tr>
+                <tr>
+                    <td>秋葵</td>
+                    <td>200g</td>
+                    <td>66</td>
+                    <td>3.8</td>
+                    <td>14.4</td>
+                    <td>0.4</td>
+                </tr>
+                <tr>
+                    <td>梨</td>
+                    <td>1个 (150g)</td>
+                    <td>87</td>
+                    <td>0.6</td>
+                    <td>22.5</td>
+                    <td>0.2</td>
+                </tr>
+                <tr>
+                    <td>牛奶 (全脂)</td>
+                    <td>250cc (250g)</td>
+                    <td>150</td>
+                    <td>8</td>
+                    <td>11.5</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>鸡蛋</td>
+                    <td>2个 (100g)</td>
+                    <td>140</td>
+                    <td>12</td>
+                    <td>0.8</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>葵花籽 (炒熟)</td>
+                    <td>200g</td>
+                    <td>1170</td>
+                    <td>41.4</td>
+                    <td>48</td>
+                    <td>102</td>
+                </tr>
+                <tr>
+                    <td>墨鱼丸</td>
+                    <td>150g</td>
+                    <td>180</td>
+                    <td>18</td>
+                    <td>15</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>四川香肠</td>
+                    <td>200g</td>
+                    <td>720</td>
+                    <td>34</td>
+                    <td>8</td>
+                    <td>62</td>
+                </tr>
+                <tr class="total">
+                    <td>总计</td>
+                    <td>-</td>
+                    <td>3811</td>
+                    <td>166.6</td>
+                    <td>294.6</td>
+                    <td>231.6</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
