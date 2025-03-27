@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日期计数器</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #display {
+      font-size: 48px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>每日变化的数字</h1>
+  <div id="display">加载中...</div>
+
+  <script>
+    // 定义基准日期 (2025年3月28日)
+    const baseDate = new Date('2025-03-28');
+
+    // 获取当前日期
+    const today = new Date();
+
+    // 计算两个日期之间的天数差
+    const timeDiff = today - baseDate; // 毫秒差
+    const dayDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24)); // 转换为天数
+
+    // 根据规则计算应显示的数字
+    function getDisplayNumber(diff) {
+      let number = 1 + diff; // 初始规律：第n天显示 n+1
+      if (number > 7) {
+        number -= 7; // 数字超过7时循环回到1
+      }
+      return number === 0 ? 7 : number; // 显示0时改为7
+    }
+
+    // 更新页面上的显示
+    const displayElement = document.getElementById('display');
+    const displayNumber = getDisplayNumber(dayDiff);
+    displayElement.textContent = displayNumber;
+  </script>
+</body>
+</html>
+
+
+
