@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食材营养成分与热量</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .total {
+            font-weight: bold;
+            background-color: #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>食材营养成分与热量</h1>
+        <table>
+            <tr>
+                <th>食材</th>
+                <th>重量</th>
+                <th>热量 (kcal)</th>
+                <th>蛋白质 (g)</th>
+                <th>脂肪 (g)</th>
+                <th>碳水化合物 (g)</th>
+            </tr>
+            <tr>
+                <td>黄瓜</td>
+                <td>600g</td>
+                <td>90</td>
+                <td>4.2</td>
+                <td>0.6</td>
+                <td>21.6</td>
+            </tr>
+            <tr>
+                <td>胡萝卜</td>
+                <td>200g</td>
+                <td>82</td>
+                <td>1.8</td>
+                <td>0.4</td>
+                <td>19.2</td>
+            </tr>
+            <tr>
+                <td>猪肉 (瘦肉)</td>
+                <td>200g</td>
+                <td>286</td>
+                <td>41.2</td>
+                <td>12.6</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>牛奶</td>
+                <td>200cc</td>
+                <td>120</td>
+                <td>6.4</td>
+                <td>6.6</td>
+                <td>9.6</td>
+            </tr>
+            <tr>
+                <td>鸡蛋</td>
+                <td>4个 (200g)</td>
+                <td>136</td>
+                <td>25.2</td>
+                <td>9.6</td>
+                <td>1.4</td>
+            </tr>
+            <tr>
+                <td>冰淇淋</td>
+                <td>75g</td>
+                <td>155</td>
+                <td>2.6</td>
+                <td>8.3</td>
+                <td>17.9</td>
+            </tr>
+            <tr>
+                <td>苹果</td>
+                <td>1个 (150g)</td>
+                <td>78</td>
+                <td>0.5</td>
+                <td>0.3</td>
+                <td>20.7</td>
+            </tr>
+            <tr class="total">
+                <td>总计</td>
+                <td>-</td>
+                <td>947</td>
+                <td>81.9</td>
+                <td>38.4</td>
+                <td>90.4</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
