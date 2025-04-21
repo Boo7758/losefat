@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutritional Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .total {
+            font-weight: bold;
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nutritional Analysis of Meal</h1>
+    <table>
+        <tr>
+            <th>Food Item</th>
+            <th>Quantity</th>
+            <th>Calories (kcal)</th>
+            <th>Protein (g)</th>
+            <th>Fat (g)</th>
+            <th>Carbs (g)</th>
+            <th>Fiber (g)</th>
+            <th>Sodium (mg)</th>
+        </tr>
+        <tr>
+            <td>Braised Pork Belly</td>
+            <td>200g</td>
+            <td>600</td>
+            <td>30</td>
+            <td>50</td>
+            <td>0</td>
+            <td>0</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Cucumber</td>
+            <td>1800g</td>
+            <td>270</td>
+            <td>12.6</td>
+            <td>1.8</td>
+            <td>64.8</td>
+            <td>9</td>
+            <td>36</td>
+        </tr>
+        <tr>
+            <td>Vegetable Buns</td>
+            <td>3 pieces (300g)</td>
+            <td>600</td>
+            <td>15</td>
+            <td>15</td>
+            <td>105</td>
+            <td>6</td>
+            <td>900</td>
+        </tr>
+        <tr>
+            <td>Guava</td>
+            <td>2 pieces (300g)</td>
+            <td>204</td>
+            <td>7.8</td>
+            <td>3</td>
+            <td>42.9</td>
+            <td>16.2</td>
+            <td>6</td>
+        </tr>
+        <tr class="total">
+            <td>Total</td>
+            <td>-</td>
+            <td>1674</td>
+            <td>65.4</td>
+            <td>69.8</td>
+            <td>212.7</td>
+            <td>31.2</td>
+            <td>1242</td>
+        </tr>
+    </table>
+</body>
+</html>
