@@ -1,102 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nutrition and Calorie Calculation</title>
+    <title>陕西风味美食营养计算器</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f5f5dc, #e6d3b9); /* 米色渐变背景 */
             margin: 0;
             padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         h1 {
             text-align: center;
-            color: #4CAF50;
+            color: #8B4513; /* 深棕色 */
+            margin-bottom: 30px;
+            font-size: 2.5em;
         }
-        table {
+        .dish-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+        .dish-item:last-child {
+            border-bottom: none;
+        }
+        .dish-name {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .dish-details {
+            text-align: right;
+        }
+        .dish-quantity {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .dish-calories {
+            font-weight: bold;
+            color: #d32f2f; /* 红色 */
+        }
+        .total-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #8B4513;
+        }
+        .total-label {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        .total-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #d32f2f; /* 红色 */
+        }
+        .nutrition-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
-        th, td {
+        .nutrition-table th, .nutrition-table td {
+            border: 1px solid #ddd;
             padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+            text-align: center;
         }
-        th {
-            background-color: #4CAF50;
+        .nutrition-table th {
+            background-color: #8B4513;
             color: white;
         }
-        tr:hover {
-            background-color: #f1f1f1;
+        .nutrition-table tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
-        .total {
-            font-weight: bold;
-            background-color: #e0f7fa;
-        }
-        .item {
-            font-style: italic;
+        .disclaimer {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #fff8e1;
+            border-left: 6px solid #ffc107;
+            font-size: 0.9em;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <h1>Nutrition and Calorie Breakdown</h1>
-    <p>This page details the nutritional information for the specified items: 300g Beef Meatballs, One Bowl Shaanxi Meatball Hu La Tang, One Serving Cured Beef Roujiamo, and One Piece Baked Flatbread (Laobing). Values are approximate based on standard nutritional data sources.</p>
-    
-    <table>
+
+<div class="container">
+    <h1>陕西风味美食营养计算器</h1>
+
+    <div class="dish-item">
+        <div class="dish-name">牛肉丸</div>
+        <div class="dish-details">
+            <div class="dish-quantity">300 克</div>
+            <div class="dish-calories">约 690 千卡</div>
+        </div>
+    </div>
+
+    <div class="dish-item">
+        <div class="dish-name">陕西肉丸胡辣汤</div>
+        <div class="dish-details">
+            <div class="dish-quantity">1 碗 (约 500 克)</div>
+            <div class="dish-calories">约 350 千卡</div>
+        </div>
+    </div>
+
+    <div class="dish-item">
+        <div class="dish-name">腊牛肉夹馍</div>
+        <div class="dish-details">
+            <div class="dish-quantity">1 份</div>
+            <div class="dish-calories">约 600 千卡</div>
+        </div>
+    </div>
+
+    <div class="dish-item">
+        <div class="dish-name">烙饼 (一角)</div>
+        <div class="dish-details">
+            <div class="dish-quantity">1 角 (250 克)</div>
+            <div class="dish-calories">约 675 千卡</div>
+        </div>
+    </div>
+
+    <div class="total-section">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="total-label">总热量估算</span>
+            <span class="total-value">2315 千卡</span>
+        </div>
+    </div>
+
+    <h2 style="margin-top: 40px; color: #8B4513;">主要营养成分估算 (每100克)</h2>
+    <table class="nutrition-table">
         <thead>
             <tr>
-                <th>Item</th>
-                <th>Calories (kcal)</th>
-                <th>Protein (g)</th>
-                <th>Fat (g)</th>
-                <th>Carbohydrates (g)</th>
+                <th>食物</th>
+                <th>热量 (kcal)</th>
+                <th>蛋白质 (g)</th>
+                <th>脂肪 (g)</th>
+                <th>碳水化合物 (g)</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class="item">300g Beef Meatballs</td>
-                <td>606</td>
-                <td>37.2</td>
-                <td>39.5</td>
-                <td>22.7</td>
-            </tr>
-            <tr>
-                <td class="item">One Bowl Shaanxi Meatball Hu La Tang</td>
-                <td>283</td>
-                <td>21</td>
+                <td>牛肉丸</td>
+                <td>230</td>
                 <td>15</td>
-                <td>17</td>
+                <td>16</td>
+                <td>7</td>
             </tr>
             <tr>
-                <td class="item">One Serving Cured Beef Roujiamo</td>
-                <td>342</td>
-                <td>19</td>
-                <td>15</td>
-                <td>29</td>
+                <td>肉丸胡辣汤</td>
+                <td>70</td>
+                <td>3</td>
+                <td>3</td>
+                <td>9</td>
             </tr>
             <tr>
-                <td class="item">One Piece Baked Flatbread (Laobing)</td>
-                <td>137</td>
-                <td>3.7</td>
-                <td>5.1</td>
-                <td>18.8</td>
+                <td>腊牛肉夹馍</td>
+                <td>240</td>
+                <td>12</td>
+                <td>10</td>
+                <td>25</td>
             </tr>
-            <tr class="total">
-                <td>Total</td>
-                <td>1368</td>
-                <td>80.9</td>
-                <td>74.6</td>
-                <td>87.5</td>
+            <tr>
+                <td>烙饼</td>
+                <td>270</td>
+                <td>9</td>
+                <td>8</td>
+                <td>40</td>
             </tr>
         </tbody>
     </table>
-    
-    <p>Note: Nutritional values can vary based on preparation methods, ingredients, and portion sizes. For precise calculations, consult a registered dietitian or use specific product labels.</p>
+
+    <div class="disclaimer">
+        <strong>免责声明:</strong> 以上热量和营养成分数据为估算值，实际数值可能因具体食材、制作方法、品牌和份量差异而有所不同。此页面仅供娱乐和粗略参考。
+    </div>
+</div>
+
 </body>
 </html>
+
+
+
