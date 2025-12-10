@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>今日饮食营养统计</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+      color: #333;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px 0;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      color: #2c3e50;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #7f8c8d;
+      font-size: 1.1rem;
+    }
+
+    .summary-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 24px;
+      margin-bottom: 30px;
+    }
+
+    .summary-title {
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+      color: #2980b9;
+    }
+
+    .totals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+    }
+
+    .total-item {
+      text-align: center;
+      padding: 16px;
+      background: #f8fbff;
+      border-radius: 12px;
+      border-left: 4px solid #3498db;
+    }
+
+    .total-value {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .total-label {
+      font-size: 0.95rem;
+      color: #7f8c8d;
+      margin-top: 6px;
+    }
+
+    .details-section {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 24px;
+    }
+
+    .details-title {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: #27ae60;
+    }
+
+    .food-list {
+      list-style: none;
+    }
+
+    .food-item {
+      padding: 14px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .food-item:last-child {
+      border-bottom: none;
+    }
+
+    .food-name {
+      font-weight: 600;
+      color: #2c3e50;
+    }
+
+    .food-nutrition {
+      color: #7f8c8d;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #95a5a6;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      .total-value {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🍽️ 今日饮食营养统计</h1>
+      <p class="subtitle">2025年12月10日 · 星期三</p>
+    </header>
+
+    <div class="summary-card">
+      <h2 class="summary-title">📊 总计营养成分</h2>
+      <div class="totals-grid">
+        <div class="total-item">
+          <div class="total-value">1735 kcal</div>
+          <div class="total-label">热量</div>
+        </div>
+        <div class="total-item">
+          <div class="total-value">143 g</div>
+          <div class="total-label">蛋白质</div>
+        </div>
+        <div class="total-item">
+          <div class="total-value">58 g</div>
+          <div class="total-label">脂肪</div>
+        </div>
+        <div class="total-item">
+          <div class="total-value">141 g</div>
+          <div class="total-label">碳水</div>
+        </div>
+        <div class="total-item">
+          <div class="total-value">19.5 g</div>
+          <div class="total-label">膳食纤维</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="details-section">
+      <h2 class="details-title">📋 食物明细</h2>
+      <ul class="food-list">
+        <li class="food-item">
+          <span class="food-name">150g 燕麦（干）</span>
+          <span class="food-nutrition">540 kcal | 蛋白19.5g | 脂肪10.5g | 碳水96g</span>
+        </li>
+        <li class="food-item">
+          <span class="food-name">200g 全脂牛奶</span>
+          <span class="food-nutrition">130 kcal | 蛋白6.6g | 脂肪7.6g | 碳水9.6g</span>
+        </li>
+        <li class="food-item">
+          <span class="food-name">400g 川香鸡小胸</span>
+          <span class="food-nutrition">660 kcal | 蛋白88g | 脂肪24g | 碳水10g</span>
+        </li>
+        <li class="food-item">
+          <span class="food-name">100g 孜然鸡小胸</span>
+          <span class="food-nutrition">170 kcal | 蛋白22g | 脂肪7g | 碳水2.5g</span>
+        </li>
+        <li class="food-item">
+          <span class="food-name">2个水煮蛋</span>
+          <span class="food-nutrition">140 kcal | 蛋白12.6g | 脂肪9.5g</span>
+        </li>
+        <li class="food-item">
+          <span class="food-name">1个苹果（约180g）</span>
+          <span class="food-nutrition">95 kcal | 蛋白0.5g | 脂肪0.3g | 碳水25g</span>
+        </li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>数据基于 USDA 与中国食物成分表估算 · 实际数值可能因品牌/做法略有差异</p>
+    </footer>
+  </div>
+</body>
+</html>
