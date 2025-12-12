@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>每日营养摄入分析</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px 0;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #2c3e50;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #7f8c8d;
+      font-size: 1rem;
+    }
+
+    .summary-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 24px;
+      margin-bottom: 30px;
+    }
+
+    .summary-title {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      color: #2980b9;
+    }
+
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding: 10px 0;
+      border-bottom: 1px dashed #eee;
+    }
+
+    .total-row:last-child {
+      border-bottom: none;
+    }
+
+    .food-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .food-item {
+      background: #fff;
+      border-left: 4px solid #3498db;
+      padding: 14px 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .food-name {
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 6px;
+    }
+
+    .food-nutrition {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #95a5a6;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      .total-row {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🥗 每日营养摄入分析</h1>
+      <p class="subtitle">2025年12月12日 · 星期五</p>
+    </header>
+
+    <div class="summary-card">
+      <div class="summary-title">📊 总计营养成分</div>
+      <div class="total-row">
+        <span>总热量</span>
+        <span>≈ 1632 kcal</span>
+      </div>
+      <div class="total-row">
+        <span>蛋白质</span>
+        <span>≈ 172.8 g</span>
+      </div>
+      <div class="total-row">
+        <span>脂肪</span>
+        <span>≈ 58.6 g</span>
+      </div>
+      <div class="total-row">
+        <span>碳水化合物</span>
+        <span>≈ 114.5 g</span>
+      </div>
+      <div class="total-row">
+        <span>膳食纤维</span>
+        <span>≈ 17.7 g</span>
+      </div>
+    </div>
+
+    <div class="food-list">
+      <div class="food-item">
+        <div class="food-name">燕麦（120g，干重）</div>
+        <div class="food-nutrition">热量：432 kcal | 蛋白质：13g | 脂肪：7.2g | 碳水：72g | 纤维：10.8g</div>
+      </div>
+      <div class="food-item">
+        <div class="food-name">鸡胸肉（400g，水煮）</div>
+        <div class="food-nutrition">热量：660 kcal | 蛋白质：124g | 脂肪：14g | 碳水：0g</div>
+      </div>
+      <div class="food-item">
+        <div class="food-name">水煮鸡蛋（4个）</div>
+        <div class="food-nutrition">热量：286 kcal | 蛋白质：25.2g | 脂肪：19.6g | 碳水：1.4g</div>
+      </div>
+      <div class="food-item">
+        <div class="food-name">水煮白菜（250g）</div>
+        <div class="food-nutrition">热量：35 kcal | 蛋白质：3.5g | 脂肪：0.3g | 碳水：6.5g | 纤维：2.5g</div>
+      </div>
+      <div class="food-item">
+        <div class="food-name">苹果（1个，约180g）</div>
+        <div class="food-nutrition">热量：95 kcal | 蛋白质：0.5g | 脂肪：0.3g | 碳水：25g | 纤维：4.4g</div>
+      </div>
+      <div class="food-item">
+        <div class="food-name">牛奶（200g，全脂）</div>
+        <div class="food-nutrition">热量：124 kcal | 蛋白质：6.6g | 脂肪：7.6g | 碳水：9.6g</div>
+      </div>
+    </div>
+
+    <footer>
+      💡 数据基于 USDA 与中国食物成分表估算，实际值可能因食材与烹饪方式略有差异。
+    </footer>
+  </div>
+</body>
+</html>
